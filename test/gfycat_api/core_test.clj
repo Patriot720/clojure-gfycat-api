@@ -1,7 +1,6 @@
 (ns gfycat-api.core-test
-  (:require [clojure.test :refer :all]
-            [gfycat-api.core :refer :all]))
+  (:require [clojure.test :refer [deftest is testing]]
+            [gfycat-api.core :as core]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest get-token-test
+  (is (= (:expires-in (core/get-token)) 3600)))
