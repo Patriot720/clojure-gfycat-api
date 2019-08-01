@@ -8,6 +8,7 @@
   (keyword (clojure.string/replace key #"_" "-")))
 (def client-info (json/read-str (slurp ".client_info.json")
                                 :key-fn clojure-stylify))
+
 (defn- gfycat-request [path query-params]
   (-> (client/get (str "https://api.gfycat.com/v1/" path)
                   {:content-type :json
@@ -15,6 +16,7 @@
                    :query-params query-params})
       :body
       (json/read-str :key-fn clojure-stylify)))
+
 (defn get-token []
   (let [token-chan (chan)]
     (go
