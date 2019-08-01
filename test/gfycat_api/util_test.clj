@@ -1,7 +1,7 @@
-(ns gfycat-api.core-test
+(ns gfycat-api.util-test
   (:require
    [clojure.test :refer [deftest is testing]]
-            [gfycat-api.fixtures :as fixtures]
+   [gfycat-api.fixtures :as fixtures]
    [gfycat-api.util :as util]))
 
 (deftest search-result-filtering

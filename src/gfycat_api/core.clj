@@ -1,7 +1,7 @@
 (ns gfycat-api.core
   (:require [clojure.data.json :as json]
             [clj-http.client :as client]
-            [clojure.core.async :refer [close!  go <! <!! >! >!! alt! alt!! chan]])
+            )
   (:gen-class))
 
 (defn- clojure-stylify [key]
@@ -18,15 +18,12 @@
       (json/read-str :key-fn clojure-stylify)))
 
 (defn get-token []
-  (let [token-chan (chan)]
-    (go
       (try
-        (>! token-chan (gfycat-request "oauth/token"
+        (gfycat-request "oauth/token"
                                        {"grant_type" "client_credentials"
                                         "client_id" (:client-id client-info)
-                                        "client_secret" (:client-secret client-info)}))
-        (catch Exception e (prn (ex-data e)  (close! token-chan)))))
-    token-chan))
+                                        "client_secret" (:client-secret client-info)})
+        (catch Exception e (prn (ex-data e)  ))))
 
 (defn search
   ([token query & [count cursor]]
