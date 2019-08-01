@@ -7,6 +7,5 @@
                            [clj-http "2.3.0"]
                            [org.clojure/data.json "0.2.6"]
                            [proto-repl "0.3.1"]]
-            :main ^:skip-aot gfycat-api.core
             :target-path "target/%s"
             :profiles {:uberjar {:aot :all}})
