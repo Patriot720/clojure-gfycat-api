@@ -1,4 +1,4 @@
-(defproject gfycat-api "0.1.0"
+(defproject gfycat-api "0.1.2"
             :description "Clojure wrapper for Gfycat API"
             :url "http://example.com/FIXME"
             :license {:name "EPL-2.0"
