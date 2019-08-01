@@ -1,6 +1,6 @@
 # gfycat-api
 
-FIXME: description
+ll: description
 
 ## Installation
 
