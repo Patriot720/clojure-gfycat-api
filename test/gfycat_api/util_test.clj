@@ -5,6 +5,7 @@
    [gfycat-api.util :as util]))
 
 (deftest search-result-filtering
-  (is (= (util/get-gfycats-with [:title] fixtures/single-gfycat-search-result)
+  (is (= (util/get-gfycats-with [:title :gfyId] fixtures/single-gfycat-search-result)
          '({:title
-            "Canadian Flag waving animated using MIR plug in after effects - free motion graphics"}))))
+            "Canadian Flag waving animated using MIR plug in after effects - free motion graphics"
+            :gfyId "fondfocusedclownanemonefish"}))))

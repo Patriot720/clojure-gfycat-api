@@ -54,6 +54,5 @@
      :avgcolor
      :miniposterurl
      :thumb100posterurl
-     :domainwhitelist
-"
+     :domainwhitelist"
   (map #(select-keys % keys) (:gfycats search-result)))
