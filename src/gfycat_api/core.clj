@@ -22,8 +22,9 @@
       (catch Exception e (prn (ex-data e))))))
 
 (defn search
-"doesnt require a token"
+  "doesnt require a token"
   ([query & [count cursor token]]
-   (gfycat-request "gfycats/search" {"search_text" query
-                                     "count" count
-                                     "cursor" cursor})))
+   (let [{found :found :as search-result} (gfycat-request "gfycats/search" {"search_text" query
+                                                                            "count" count
+                                                                            "cursor" cursor})]
+     (if (> found 0) search-result))))

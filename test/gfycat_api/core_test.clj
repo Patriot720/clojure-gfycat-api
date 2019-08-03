@@ -19,10 +19,10 @@
   (testing "should return one gfycat search result"
     (let [search-result (core/search "thanos power up" 1)]
       (is (= (:cursor search-result) ""))))
-  #_(testing "token search"
+  #_(testing "search with token"
     (let [search-result (core/search nil "thanos power up" 1)]
       (is (= (count (:gfycats search-result)) 1))))
-  #_(testin "should return nil on empty search"
-            (let [search-result (core/search token "fjsdlfjsdlfjadlkf;adjsf;" 1)]
-              (is (= ()))))
+  (testing "should return nil on empty search"
+            (let [search-result (core/search "" 1)]
+              (is (= search-result nil))))
   (testing "searchnig with cursor"))
