@@ -7,7 +7,7 @@ ll: description
 Download from http://example.com/FIXME.
 
 ## Usage
-
+[![Clojars Project](https://img.shields.io/clojars/v/gfycat-api.svg)](https://clojars.org/gfycat-api)
 FIXME: explanation
 
     $ java -jar gfycat-api-0.1.0-standalone.jar [args]
